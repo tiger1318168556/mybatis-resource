@@ -12,11 +12,11 @@ import java.util.List;
 
 /**
  * @author:zhanglihu
- * @Date:2022/6/18-06-18-18:19
+ * @Date:2022/6/19-06-19-1:02
  * @Description:com.tiger.test
  * @Version:1.0
  **/
-public class IPersistenceTest {
+public class MyBatisTest {
     @Test
     public void test() throws Exception {
         InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
