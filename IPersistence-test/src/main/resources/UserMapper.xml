@@ -1,0 +1,13 @@
+<mapper namespace="user">
+    <!--sql的唯一标识：namespace.id 来组成:statementId-->
+    <select id="selectList" resultType="com.tiger.bean.User">
+        select * from user
+    </select>
+    <!--参数传递，参数类型 User
+    User user = new User()
+    user.setId(1)
+    user.setUsername("")-->
+    <select id ="selectOne" resultType="com.tiger.bean.User" paramterType="com.tiger.bean.User">
+        select * from user where id =#{id} and username=#{username}
+    </select>
+</mapper>
