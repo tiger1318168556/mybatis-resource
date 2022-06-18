@@ -1,6 +1,7 @@
 package com.tiger.test;
 
 import com.tiger.bean.User;
+import com.tiger.dao.IUserDao;
 import com.tiger.io.Resources;
 import com.tiger.sqlsession.SqlSession;
 import com.tiger.sqlsession.SqlSessionFactory;
@@ -27,9 +28,17 @@ public class MyBatisTest {
         user.setUsername("tiger");
         //User queryUser = sqlSession.selectOne("user.selectOne", user);
         //System.out.println(queryUser);
-        List<User> users = sqlSession.selectList("user.selectList");
+        /*List<User> users = sqlSession.selectList("user.selectList");
         for (User u : users) {
             System.out.println(u);
+        }*/
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> all = userDao.findAll();
+        for (User user1 : all) {
+            System.out.println(user1);
         }
+        /*User userByCondition = userDao.findUserByCondition(user);
+        System.out.println(userByCondition);*/
+
     }
 }
